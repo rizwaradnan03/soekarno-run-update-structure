@@ -1,0 +1,3 @@
+id,product_category_id,title,type,description,isPublished,ended_at,price,stock,created_at,updated_at
+40f49a06-191a-4425-920e-4c638f134d91,18c12bb0-30cb-44e7-bc0f-eb1ce62856fe,5 Kilometer,EARLY_BIRD,deskripsi,false,2025-03-25,100000,4787,2025-03-18,2025-03-21
+5f653986-380b-44fd-b040-b6b7633fc2c5,18c12bb0-30cb-44e7-bc0f-eb1ce62856fe,5 Kilometer,NORMAL,cocok untuk pemula,false,2025-03-20,150000,150,2025-03-20,2025-03-20
