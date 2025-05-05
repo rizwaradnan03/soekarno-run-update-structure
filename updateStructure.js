@@ -214,6 +214,8 @@ for (let i = 1; i < data.userPayment.length; i++) {
 
 // console.log("Query : ", personalInformationsQuery[0]);
 
+console.log('V4', uuidv4())
+
 const queries = async () => {
   let eventLogs = [];
   for (let i = 0; i < eventQuery.length; i++) {
@@ -304,7 +306,7 @@ const queries = async () => {
   }
 };
 
-console.log("Personal Info Length : ", personalInformationsQuery.length)
+// console.log("Personal Info Length : ", personalInformationsQuery.length)
 
 // queries()
 
