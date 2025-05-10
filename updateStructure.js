@@ -1,6 +1,7 @@
 import xlsx from "xlsx";
 import { v4 as uuidv4 } from "uuid";
 import { Client } from "pg";
+import path from "path"
 
 const client = new Client({
   user: "postgres",
@@ -12,14 +13,16 @@ const client = new Client({
 
 await client.connect();
 
+const folderPath = "05-05-2025"
+
 const workBook = {
-  userPayment: xlsx.readFile("user_payments.xls"),
-  user: xlsx.readFile("users.xls"),
-  productCategories: xlsx.readFile("product_categories.xls"),
-  products: xlsx.readFile("products.xls"),
-  personalInformation: xlsx.readFile("personal_infomations.xls"),
-  parqQuestion: xlsx.readFile("parq_questions.xls"),
-  midtrans: xlsx.readFile("transaction-report.xls"),
+  userPayment: xlsx.readFile(path.join(folderPath, "user_payments.xls")),
+  user: xlsx.readFile(path.join(folderPath, "users.xls")),
+  productCategories: xlsx.readFile(path.join(folderPath, "product_categories.xls")),
+  products: xlsx.readFile(path.join(folderPath, "products.xls")),
+  personalInformation: xlsx.readFile(path.join(folderPath, "personal_infomations.xls")),
+  parqQuestion: xlsx.readFile(path.join(folderPath, "parq_questions.xls")),
+  midtrans: xlsx.readFile(path.join(folderPath, "transaction-report.xls")),
 };
 
 const workSheet = {
@@ -221,7 +224,7 @@ const queries = async () => {
   for (let i = 0; i < eventQuery.length; i++) {
     try {
       await client.query(eventQuery[i][1]);
-      // console.log("Event Log : ", i);
+      console.log("Event Log : ", i);
       eventLogs.push([i, "success"]);
     } catch (error) {
       eventLogs.push([i, "failed"]);
@@ -232,7 +235,7 @@ const queries = async () => {
   for (let i = 0; i < productCategoriesQuery.length; i++) {
     try {
       await client.query(productCategoriesQuery[i][1]);
-      // console.log("Product Category Log : ", i);
+      console.log("Product Category Log : ", i);
       productCategoryLogs.push([i, "success"]);
     } catch (error) {
       productCategoryLogs.push([i, "failed"]);
@@ -243,7 +246,7 @@ const queries = async () => {
   for (let i = 0; i < productsQuery.length; i++) {
     try {
       await client.query(productsQuery[i][1]);
-      // console.log("Product Log : ", i);
+      console.log("Product Log : ", i);
       productLogs.push([i, "success"]);
     } catch (error) {
       productLogs.push([i, "failed"]);
@@ -254,7 +257,7 @@ const queries = async () => {
   for (let i = 0; i < variantsQuery.length; i++) {
     try {
       await client.query(variantsQuery[i][1]);
-      // console.log("Variant Log : ", i);
+      console.log("Variant Log : ", i);
       variantLogs.push([i, "success"]);
     } catch (error) {
       variantLogs.push([i, "failed"]);
@@ -265,7 +268,7 @@ const queries = async () => {
   for (let i = 0; i < usersQuery.length; i++) {
     try {
       await client.query(usersQuery[i][1]);
-      // console.log("User Log : ", i);
+      console.log("User Log : ", i);
       userLogs.push([i, "success"]);
     } catch (error) {
       userLogs.push([i, "failed"]);
@@ -276,7 +279,7 @@ const queries = async () => {
   for (let i = 0; i < parqQuestionsQuery.length; i++) {
     try {
       await client.query(parqQuestionsQuery[i][1]);
-      // console.log("Parq Question Log : ", i);
+      console.log("Parq Question Log : ", i);
       parqQuestionLogs.push([i, "success"]);
     } catch (error) {
       parqQuestionLogs.push([i, "failed"]);
@@ -298,7 +301,7 @@ const queries = async () => {
   for (let i = 0; i < userPaymentQuery.length; i++) {
     try {
       await client.query(userPaymentQuery[i][1]);
-      // console.log("User Payment Log : ", i);
+      console.log("User Payment Log : ", i);
       userPaymentLogs.push([i, "success"]);
     } catch (error) {
       userPaymentLogs.push([i, "failed"]);
@@ -306,7 +309,9 @@ const queries = async () => {
   }
 };
 
-// console.log("Personal Info Length : ", personalInformationsQuery.length)
+console.log("Data : ", data.personalInformation.length)
+
+// console.log("Personal Info Length : ", [personalInformationsQuery.length, parqQuestionsQuery.length, userPaymentQuery.length])
 
 queries()
 
