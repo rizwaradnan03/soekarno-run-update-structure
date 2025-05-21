@@ -64,7 +64,7 @@ let personalInformationIds = [];
 
 eventQuery.push([
   1,
-  "INSERT INTO events (id, title, location, address, started_at, ended_at, is_active) VALUES ('3d3b8134-9d02-4180-ab51-d6cd236df1e2', 'Soekarno Run Bandung', 'BANDUNG', 'Balai Kota Bandung', '2025-06-08', '2025-06-08', true);",
+  "INSERT INTO events (id, title, location, address, started_at, ended_at, finished_at, is_active) VALUES ('3d3b8134-9d02-4180-ab51-d6cd236df1e2', 'Soekarno Run Bandung', 'BANDUNG', 'Balai Kota Bandung', '2025-06-08', '2025-06-08', '2025-06-08', true);",
 ]);
 
 productCategoriesQuery.push([
@@ -115,7 +115,7 @@ for (let i = 1; i < data.personalInformation.length; i++) {
   if (!isDuplicated) {
     personalInformationsQuery.push([
       i,
-      `INSERT INTO personal_infomations (id, user_id, first_name, last_name, contact, gender, nationality, ktp, health_problem, community, name_of_emergency_contact, relation_of_emergency_contact, emergency_contact, shirt_type, shirt_size, blood_type, created_at, updated_at) VALUES ('${data.personalInformation[i][0]}', '${data.personalInformation[i][1]}', '${data.personalInformation[i][2]}', '${data.personalInformation[i][3]}', '${data.personalInformation[i][4]}', '${data.personalInformation[i][5]}', '${data.personalInformation[i][6]}', '${data.personalInformation[i][7]}', '${data.personalInformation[i][8]}', '${data.personalInformation[i][11]}', '${data.personalInformation[i][12]}', '${data.personalInformation[i][13]}', '${data.personalInformation[i][14]}', '${data.personalInformation[i][15]}', '${data.personalInformation[i][16]}', '${data.personalInformation[i][9]}', '2025-03-20', '2025-03-20');`,
+      `INSERT INTO personal_infomations (id, user_id, first_name, last_name, contact, gender, nationality, ktp, health_problem, community, name_of_emergency_contact, relation_of_emergency_contact, emergency_contact, shirt_type, shirt_size, blood_type, created_at, updated_at) VALUES ('${data.personalInformation[i][0]}', '${data.personalInformation[i][1]}', ${data.personalInformation[i][2] ? `'${data.personalInformation[i][2]}'` : null }, '${data.personalInformation[i][3]}', '${data.personalInformation[i][4]}', '${data.personalInformation[i][5]}', '${data.personalInformation[i][6]}', '${data.personalInformation[i][7]}', '${data.personalInformation[i][8]}', ${data.personalInformation[i][11] ? `'${data.personalInformation[i][11]}'` : null}, '${data.personalInformation[i][12]}', '${data.personalInformation[i][13]}', '${data.personalInformation[i][14]}', '${data.personalInformation[i][15]}', '${data.personalInformation[i][16]}', '${data.personalInformation[i][9]}', '2025-03-20', '2025-03-20');`,
     ]);
     personalInformationIds.push(data.personalInformation[i][0]);
   }
@@ -313,7 +313,7 @@ console.log("Data : ", data.personalInformation.length)
 
 // console.log("Personal Info Length : ", [personalInformationsQuery.length, parqQuestionsQuery.length, userPaymentQuery.length])
 
-// queries()
+queries()
 
 // console.log("Parq Question", )
 
