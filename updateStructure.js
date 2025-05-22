@@ -1,7 +1,13 @@
 import xlsx from "xlsx";
 import { v4 as uuidv4 } from "uuid";
 import { Client } from "pg";
-import path from "path"
+import dataEvents from "./data/events.json" assert {type: 'json'};
+import dataParQuestions from "./data/parq_questions.json" assert {type: 'json'};
+import dataUserPayments from "./data/user_payments.json" assert {type: 'json'}
+import dataUsers from "./data/users.json" assert {type: 'json'}
+import dataProductCategories from "./data/product_categories.json" assert {type: 'json'}
+import dataProducts from "./data/products.json" assert {type: 'json'}
+import dataPersonalInformations from "./data/personal_infomations.json" assert {type: 'json'}
 
 const client = new Client({
   user: "postgres",
@@ -13,41 +19,15 @@ const client = new Client({
 
 await client.connect();
 
-const folderPath = "05-05-2025"
-
 const workBook = {
-  userPayment: xlsx.readFile(path.join(folderPath, "user_payments.xls")),
-  user: xlsx.readFile(path.join(folderPath, "users.xls")),
-  productCategories: xlsx.readFile(path.join(folderPath, "product_categories.xls")),
-  products: xlsx.readFile(path.join(folderPath, "products.xls")),
-  personalInformation: xlsx.readFile(path.join(folderPath, "personal_infomations.xls")),
-  parqQuestion: xlsx.readFile(path.join(folderPath, "parq_questions.xls")),
-  midtrans: xlsx.readFile(path.join(folderPath, "transaction-report.xls")),
+  midtrans: xlsx.readFile("transaction-report.xls"),
 };
 
 const workSheet = {
-  userPayment: workBook.userPayment.Sheets["user_payments"],
-  user: workBook.user.Sheets["users"],
-  productCategories: workBook.productCategories.Sheets["product_categories"],
-  products: workBook.products.Sheets["products"],
-  personalInformation:
-    workBook.personalInformation.Sheets["personal_infomations"],
-  parqQuestion: workBook.parqQuestion.Sheets["parq_questions"],
   midtrans: workBook.midtrans.Sheets["transaction-report"],
 };
 
 const data = {
-  userPayment:
-    xlsx.utils.sheet_to_json(workSheet.userPayment, { header: 1 }) || [],
-  user: xlsx.utils.sheet_to_json(workSheet.user, { header: 1 }) || [],
-  productCategories:
-    xlsx.utils.sheet_to_json(workSheet.productCategories, { header: 1 }) || [],
-  products: xlsx.utils.sheet_to_json(workSheet.products, { header: 1 }) || [],
-  personalInformation:
-    xlsx.utils.sheet_to_json(workSheet.personalInformation, { header: 1 }) ||
-    [],
-  parqQuestion:
-    xlsx.utils.sheet_to_json(workSheet.parqQuestion, { header: 1 }) || [],
   midtrans: xlsx.utils.sheet_to_json(workSheet.midtrans, { header: 1 }) || [],
 };
 
@@ -62,15 +42,24 @@ let personalInformationsQuery = [];
 
 let personalInformationIds = [];
 
-eventQuery.push([
-  1,
-  "INSERT INTO events (id, title, location, address, started_at, ended_at, finished_at, is_active) VALUES ('3d3b8134-9d02-4180-ab51-d6cd236df1e2', 'Soekarno Run Bandung', 'BANDUNG', 'Balai Kota Bandung', '2025-06-08', '2025-06-08', '2025-06-08', true);",
-]);
+for(let i = 0;i < dataEvents.length;i++){
+  const event = dataEvents[i]
 
-productCategoriesQuery.push([
-  1,
-  "INSERT INTO product_categories VALUES ('18c12bb0-30cb-44e7-bc0f-eb1ce62856fe', '3d3b8134-9d02-4180-ab51-d6cd236df1e2', 'Fun Run', '2025-03-18', '2025-03-18');",
-]);
+  eventQuery.push([
+    1,
+    `INSERT INTO events (id, title, location, address, started_at, ended_at, finished_at, is_active) VALUES ('${event.id}', '${event.title}', '${event.location}', '${event.address}', '${event.started_at}', '${event.ended_at}', '20205-06-08', false);`
+  ])
+}
+
+for(let i = 0;i < dataProductCategories.length;i++){
+  const productCategory = dataProductCategories[i]
+
+  productCategoriesQuery.push([
+    1,
+    `INSERT INTO product_categories (id, event_id, title, created_at, updated_at) VALUES ('${productCategory.id}', '${productCategory.event_id}', '${productCategory.title}', '${productCategory.created_at}', '${productCategory.updated_at}');`,
+  ]);
+}
+
 
 let productId = uuidv4();
 productsQuery.push([
@@ -80,34 +69,40 @@ productsQuery.push([
 
 let variantIds = [];
 
-for (let i = 1; i < data.products.length; i++) {
-  variantIds.push(data.products[i][0]);
+for (let i = 0; i < dataProducts.length; i++) {
+  const product = dataProducts[i]
+  variantIds.push(product.id);
 
   variantsQuery.push([
     i,
-    `INSERT INTO variants (id, product_id, title, price, stock, ended_at, is_published, is_active, created_at, updated_at) VALUES ('${data.products[i][0]}', '${productId}', '${data.products[i][3]}', ${data.products[i][7]}, ${data.products[i][8]}, '2025-03-22', false, true, '2025-03-22', '2025-03-22');`,
+    `INSERT INTO variants (id, product_id, title, price, stock, ended_at, is_published, is_active, created_at, updated_at) VALUES ('${product.id}', '${productId}', '${product.title}', ${product.price}, ${product.stock}, '2025-03-22', false, true, '2025-03-22', '2025-03-22');`,
   ]);
 }
 
-for (let i = 1; i < data.user.length; i++) {
+for (let i = 0; i < dataUsers.length; i++) {
+  const user = dataUsers[i]
+
   usersQuery.push([
     i,
-    `INSERT INTO users (id, role, email, password, refresh_token, created_at, updated_at) VALUES ('${data.user[i][0]}', '${data.user[i][1]}', '${data.user[i][2]}', '${data.user[i][3]}', '${data.user[i][4]}', '2025-03-21', '2025-03-21');`,
+    `INSERT INTO users (id, role, email, password, refresh_token, created_at, updated_at) VALUES ('${user.id}', '${user.role}', '${user.email}', '${user.password}', ${user.refresh_token ? `'${user.refresh_token}'` : null}, '${user.created_at}', '${user.updated_at}');`,
   ]);
 }
 
-for (let i = 1; i < data.parqQuestion.length; i++) {
+for (let i = 0; i < dataParQuestions.length; i++) {
+  const parQuestion = dataParQuestions[i]
+
   parqQuestionsQuery.push([
     i,
-    `INSERT INTO parq_questions (id, user_id, question_1, question_2, question_3, question_4, question_5, question_6, question_7, created_at, updated_at) VALUES ('${data.parqQuestion[i][0]}', '${data.parqQuestion[i][1]}', ${data.parqQuestion[i][2]}, ${data.parqQuestion[i][3]}, ${data.parqQuestion[i][4]}, ${data.parqQuestion[i][5]}, ${data.parqQuestion[i][6]}, ${data.parqQuestion[i][7]}, ${data.parqQuestion[i][8]}, '2025-03-20', '2025-03-20');`,
+    `INSERT INTO parq_questions (id, user_id, question_1, question_2, question_3, question_4, question_5, question_6, question_7, created_at, updated_at) VALUES ('${parQuestion.id}', '${parQuestion.user_id}', ${parQuestion.question_1}, ${parQuestion.question_2}, ${parQuestion.question_3}, ${parQuestion.question_4}, ${parQuestion.question_5}, ${parQuestion.question_6}, ${parQuestion.question_7}, '${parQuestion.created_at}', '${parQuestion.updated_at}');`,
   ]);
 }
 
-for (let i = 1; i < data.personalInformation.length; i++) {
+for (let i = 0; i < dataPersonalInformations.length; i++) {
+  const personalInformation = dataPersonalInformations[i]
   let isDuplicated = false;
 
   for (let j = 0; j < personalInformationIds.length; j++) {
-    if (data.personalInformation[i][1] == personalInformationIds[j]) {
+    if (personalInformation.user_id == personalInformationIds[j]) {
       isDuplicated = true;
     }
   }
@@ -115,48 +110,54 @@ for (let i = 1; i < data.personalInformation.length; i++) {
   if (!isDuplicated) {
     personalInformationsQuery.push([
       i,
-      `INSERT INTO personal_infomations (id, user_id, first_name, last_name, contact, gender, nationality, ktp, health_problem, community, name_of_emergency_contact, relation_of_emergency_contact, emergency_contact, shirt_type, shirt_size, blood_type, created_at, updated_at) VALUES ('${data.personalInformation[i][0]}', '${data.personalInformation[i][1]}', ${data.personalInformation[i][2] ? `'${data.personalInformation[i][2]}'` : null }, '${data.personalInformation[i][3]}', '${data.personalInformation[i][4]}', '${data.personalInformation[i][5]}', '${data.personalInformation[i][6]}', '${data.personalInformation[i][7]}', '${data.personalInformation[i][8]}', ${data.personalInformation[i][11] ? `'${data.personalInformation[i][11]}'` : null}, '${data.personalInformation[i][12]}', '${data.personalInformation[i][13]}', '${data.personalInformation[i][14]}', '${data.personalInformation[i][15]}', '${data.personalInformation[i][16]}', '${data.personalInformation[i][9]}', '2025-03-20', '2025-03-20');`,
+      `INSERT INTO personal_infomations (id, user_id, first_name, last_name, 
+      contact, gender, nationality, ktp, health_problem, community, name_of_emergency_contact, 
+      relation_of_emergency_contact, emergency_contact, shirt_type, shirt_size, 
+      blood_type, created_at, updated_at) 
+      VALUES ('${personalInformation.id}', '${personalInformation.user_id}', ${personalInformation.first_name ? `'${personalInformation.first_name}'` : null }, '${personalInformation.last_name}', '${personalInformation.contact}', '${personalInformation.gender}', '${personalInformation.nationality}', '${personalInformation.ktp}', '${personalInformation.health_problem}', ${personalInformation.community ? `'${personalInformation.community}'` : null}, '${personalInformation.name_of_emergency_contact}', '${personalInformation.relation_of_emergency_contact}', '${personalInformation.emergencyContact}', '${personalInformation.shirt_type}', '${personalInformation.shirt_size}', '${personalInformation.blood_type}', '${personalInformation.created_at}', '${personalInformation.updated_at}');`,
     ]);
-    personalInformationIds.push(data.personalInformation[i][0]);
+    personalInformationIds.push(personalInformation.id);
   }
 }
 
 let unValid = [];
 
 let usedOrderId = [];
-for (let i = 1; i < data.userPayment.length; i++) {
+for (let i = 0; i < dataUserPayments.length; i++) {
+  const userPayment = dataUserPayments[i]
   let isValid = false;
 
-  if (data.userPayment[i][1] && data.userPayment[i][4] == true) {
+  if (userPayment.transaction_id && userPayment.is_payed == true) {
     isValid = true;
     userPaymentQuery.push([
       i,
       `INSERT INTO user_payments (id, order_id, variant_id, user_id, transaction_status, is_payed, is_qr_booked, gross_amount, payment_type, created_at, updated_at, bib_number) VALUES('${
-        data.userPayment[i][0]
-      }', ${data.userPayment[i][1] ? `'${data.userPayment[i][1]}'` : null}, '${
-        data.userPayment[i][2]
-      }', '${data.userPayment[i][3]}', '${"settlement"}',${
-        data.userPayment[i][4]
-      }, ${data.userPayment[i][5]}, ${
-        data.userPayment[i][6] ? data.userPayment[i][6] : null
+        userPayment.id
+      }', ${userPayment.transaction_id ? `'${userPayment.transaction_id}'` : null}, '${
+        userPayment.product_id
+      }', '${userPayment.user_id}', '${"settlement"}',${
+        userPayment.is_payed
+      }, ${userPayment.is_qr_booked}, ${
+        userPayment.gross_amount ? userPayment.gross_amount : null
       }, ${
-        data.userPayment[i][7] ? `'${data.userPayment[i][7]}'` : null
+        userPayment.payment_type ? `'${userPayment.payment_type}'` : null
       }, '2025-03-21', '2025-03-21', ${
-        data.userPayment[i][8]
-          ? `'${String(data.userPayment[i][8]).padStart(4, "0")}'`
+        userPayment.bib_number
+          ? `'${String(userPayment.bib_number).padStart(4, "0")}'`
           : null
       });`,
     ]);
   } else {
-    const userId = data.userPayment[i][3];
+    const userId = userPayment.user_id;
 
-    for (let j = 1; j < data.user.length; j++) {
+    for (let j = 0; j < dataUsers.length; j++) {
+      const user = dataUsers[j]
       let isStop = false;
 
-      if (userId == data.user[j][0]) {
+      if (userId == user.id) {
         for (let p = 1; p < data.midtrans.length; p++) {
           if (
-            data.midtrans[p][8] == data.user[j][2] &&
+            data.midtrans[p][8] == user.email &&
             data.midtrans[p][5] != "settlement" &&
             data.midtrans[p][3] == "Payment"
           ) {
@@ -172,7 +173,7 @@ for (let i = 1; i < data.userPayment.length; i++) {
             if (!isSame) {
               userPaymentQuery.push([
                 i,
-                `INSERT INTO user_payments (id, order_id, variant_id, user_id, transaction_status, is_payed, is_qr_booked, gross_amount, payment_type, created_at, updated_at, bib_number) VALUES('${data.userPayment[i][0]}', '${data.midtrans[p][1]}', '${data.userPayment[i][2]}', '${data.userPayment[i][3]}', '${data.midtrans[p][5]}',${data.userPayment[i][4]}, ${data.userPayment[i][5]}, ${data.midtrans[p][4]},'${data.midtrans[p][3]}', '2025-03-21', '2025-03-21', null);`,
+                `INSERT INTO user_payments (id, order_id, variant_id, user_id, transaction_status, is_payed, is_qr_booked, gross_amount, payment_type, created_at, updated_at, bib_number) VALUES('${userPayment.id}', '${data.midtrans[p][1]}', '${userPayment.product_id}', '${userPayment.user_id}', '${data.midtrans[p][5]}',${userPayment.is_payed}, ${userPayment.is_qr_booked}, ${data.midtrans[p][4]},'${data.midtrans[p][3]}', '${userPayment.created_at}', '${userPayment.updated_at}', null);`,
               ]);
 
               usedOrderId.push(data.midtrans[p][1]);
@@ -190,34 +191,9 @@ for (let i = 1; i < data.userPayment.length; i++) {
   }
 
   if (!isValid) {
-    unValid.push(data.userPayment[i][3]);
+    unValid.push(userPayment.user_id);
   }
 }
-
-// let query = []
-
-// for(let i = 0;i < unValid.length;i++){
-//   for(let j = 1;j < data.user.length;j++){
-//     if(unValid[i] == data.user[j][0]){
-
-//       for(let p = 1;p < data.midtrans.length;p++){
-//         if(data.midtrans[p][8] == data.user[j][2]){
-//           query.push([i+1,
-// `INSERT INTO transactions (id, event_id, created_at, updated_at) VALUES ('${data.midtrans[p][1]}', '3d3b8134-9d02-4180-ab51-d6cd236df1e2','2025-03-21', '2025-03-21');`])
-
-//       query.push([i+1,
-// `UPDATE user_payments SET transaction_id = '${data.midtrans[p][1]}', is_payed = true, is_qr_booked = false, gross_amount = ${data.midtrans[p][4]}, payment_type = '${data.midtrans[p][2]}', bib_number = '0218' where id = 'cebfd198-5de8-4bf3-913b-4ce09853c53c';`])
-//         }
-//       }
-
-//       // break
-//     }
-//   }
-// }
-
-// console.log("Query : ", personalInformationsQuery[0]);
-
-console.log('V4', uuidv4())
 
 const queries = async () => {
   let eventLogs = [];
@@ -309,26 +285,4 @@ const queries = async () => {
   }
 };
 
-console.log("Data : ", data.personalInformation.length)
-
-// console.log("Personal Info Length : ", [personalInformationsQuery.length, parqQuestionsQuery.length, userPaymentQuery.length])
-
 queries()
-
-// console.log("Parq Question", )
-
-// const finalWorkbook = xlsx.utils.book_new();
-
-// xlsx.utils.book_append_sheet(finalWorkbook, xlsx.utils.aoa_to_sheet(eventQuery), "Events");
-// xlsx.utils.book_append_sheet(finalWorkbook, xlsx.utils.aoa_to_sheet(productCategoriesQuery), "ProductCategories");
-// xlsx.utils.book_append_sheet(finalWorkbook, xlsx.utils.aoa_to_sheet(productsQuery), "Products");
-// xlsx.utils.book_append_sheet(finalWorkbook, xlsx.utils.aoa_to_sheet(variantsQuery), "Variants");
-// xlsx.utils.book_append_sheet(finalWorkbook, xlsx.utils.aoa_to_sheet(usersQuery), "Users");
-// xlsx.utils.book_append_sheet(finalWorkbook, xlsx.utils.aoa_to_sheet(parqQuestionsQuery), "ParqQuestions");
-// xlsx.utils.book_append_sheet(finalWorkbook, xlsx.utils.aoa_to_sheet(personalInformationsQuery), "PersonalInformations");
-
-// // 12. Simpan workbook ke file .xlsx
-// const fileName = `before-migrating.xlsx`;
-// xlsx.writeFile(finalWorkbook, fileName);
-// console.log("✅ Export complete:", fileName);
-// await client.end()

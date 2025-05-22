@@ -1,0 +1,28 @@
+[
+  {
+    "id": "40f49a06-191a-4425-920e-4c638f134d91",
+    "product_category_id": "18c12bb0-30cb-44e7-bc0f-eb1ce62856fe",
+    "title": "5 Kilometer",
+    "type": "EARLY_BIRD",
+    "description": "deskripsi",
+    "isPublished": false,
+    "ended_at": "2025-03-25",
+    "price": 100000,
+    "stock": 4787,
+    "created_at": "2025-03-18",
+    "updated_at": "2025-03-21"
+  },
+  {
+    "id": "5f653986-380b-44fd-b040-b6b7633fc2c5",
+    "product_category_id": "18c12bb0-30cb-44e7-bc0f-eb1ce62856fe",
+    "title": "5 Kilometer",
+    "type": "NORMAL",
+    "description": "cocok untuk pemula",
+    "isPublished": false,
+    "ended_at": "2025-03-20",
+    "price": 150000,
+    "stock": 150,
+    "created_at": "2025-03-20",
+    "updated_at": "2025-03-20"
+  }
+]
