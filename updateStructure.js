@@ -75,7 +75,7 @@ for (let i = 0; i < dataProducts.length; i++) {
 
   variantsQuery.push([
     i,
-    `INSERT INTO variants (id, product_id, title, price, stock, ended_at, is_published, is_active, created_at, updated_at) VALUES ('${product.id}', '${productId}', '${product.title}', ${product.price}, ${product.stock}, '2025-03-22', false, true, '2025-03-22', '2025-03-22');`,
+    `INSERT INTO variants (id, product_id, title, price, stock, is_published, is_active, created_at, updated_at) VALUES ('${product.id}', '${productId}', '${product.title}', ${product.price}, ${product.stock}, false, true, '2025-03-22', '2025-03-22');`,
   ]);
 }
 
@@ -110,7 +110,7 @@ for (let i = 0; i < dataPersonalInformations.length; i++) {
   if (!isDuplicated) {
     personalInformationsQuery.push([
       i,
-      `INSERT INTO personal_infomations (id, user_id, first_name, last_name, 
+      `INSERT INTO personal_informations (id, user_id, first_name, last_name, 
       contact, gender, nationality, ktp, health_problem, community, name_of_emergency_contact, 
       relation_of_emergency_contact, emergency_contact, shirt_type, shirt_size, 
       blood_type, created_at, updated_at) 
@@ -283,6 +283,9 @@ const queries = async () => {
       userPaymentLogs.push([i, "failed"]);
     }
   }
+
+  console.log("Variant : ", variantsQuery[0])
+  console.log("User Payment : ", userPaymentQuery[0])
 };
 
 queries()
