@@ -540,15 +540,6 @@
     "updated_at": "2025-03-21"
   },
   {
-    "id": "4cd1de3d-9db1-4bb6-8f49-ea94b7f5b9db",
-    "role": "USER",
-    "email": "kristian_junaidi@yahoo.com",
-    "password": "$2b$10$w/MkOdVvNJTR6OwSWXsFVOj9n/h6Fwmhpcvh55xXSutfn2W4gIc6i",
-    "refresh_token": "$2b$12$RcL3o4H6WlhnBPBKIUvVaeXvoUnTDL.2JVssr/KqZqqfh8R9QAVn.",
-    "created_at": "2025-03-21",
-    "updated_at": "2025-03-21"
-  },
-  {
     "id": "1ea414e4-24b7-45e4-ae9c-a05025c4ed7a",
     "role": "USER",
     "email": "aryadijr12@gmail.com",
@@ -673,6 +664,15 @@
     "refresh_token": null,
     "created_at": "2025-03-21",
     "updated_at": "2025-04-17"
+  },
+  {
+    "id": "4cd1de3d-9db1-4bb6-8f49-ea94b7f5b9db",
+    "role": "USER",
+    "email": "kristian_junaidi@yahoo.com",
+    "password": "$2b$10$w/MkOdVvNJTR6OwSWXsFVOj9n/h6Fwmhpcvh55xXSutfn2W4gIc6i",
+    "refresh_token": "$2b$12$u0hT0M1JEopjstRYrFpahOWfta02cjay7L6tC0jGVfX0qKDe7wgYS",
+    "created_at": "2025-03-21",
+    "updated_at": "2025-05-26"
   },
   {
     "id": "7ce683b8-e1e0-430b-b569-6bacc1d3e30d",
@@ -1386,15 +1386,6 @@
     "updated_at": "2025-03-21"
   },
   {
-    "id": "ad48eeb8-d1f4-44b2-bde5-ecd241a8a258",
-    "role": "USER",
-    "email": "setyaningsih1685@gmail.com",
-    "password": "$2b$10$SZ9pBRXTyoYEcJDRnerAk.hzyZBJtpXe/lOcOKQIBAvHbWXO98v7W",
-    "refresh_token": null,
-    "created_at": "2025-03-21",
-    "updated_at": "2025-03-21"
-  },
-  {
     "id": "04e4365b-33fa-4e61-9d42-2c00ec78b467",
     "role": "USER",
     "email": "rizkullahfauzan469@gmail.com",
@@ -1710,6 +1701,15 @@
     "updated_at": "2025-05-19"
   },
   {
+    "id": "ad48eeb8-d1f4-44b2-bde5-ecd241a8a258",
+    "role": "USER",
+    "email": "setyaningsih1685@gmail.com",
+    "password": "$2b$10$SZ9pBRXTyoYEcJDRnerAk.hzyZBJtpXe/lOcOKQIBAvHbWXO98v7W",
+    "refresh_token": "$2b$12$iJVGU6B/zm5nntuxlmIXAO89PeuOkPGghLU5A6vMaCLX6q3id4UeS",
+    "created_at": "2025-03-21",
+    "updated_at": "2025-05-23"
+  },
+  {
     "id": "28c6d405-1549-454d-94fc-1e0e3801e51b",
     "role": "USER",
     "email": "bahrialkundouri@gmail.com",
@@ -1993,9 +1993,9 @@
     "role": "USER",
     "email": "sandirabagas23@gmail.com",
     "password": "$2b$10$UJhuoBDXK69rga7mKmIHkOcwZ0zg27dGWhc6G3J5WvkMzhhQ/E0Em",
-    "refresh_token": "$2b$12$degSdCYEoas2cYl.iNZNJuEocazJtzo8Xu5f7fQnGclGUJMzYSr0e",
+    "refresh_token": "$2b$12$PDMblMI2IHw.VpgewieCQe2U3VRqzu6ZH6yOniMgvK/hpx4OqiUea",
     "created_at": "2025-03-21",
-    "updated_at": "2025-04-28"
+    "updated_at": "2025-05-23"
   },
   {
     "id": "602b197c-f8c0-4225-8379-0fea99fc375d",
@@ -2484,15 +2484,6 @@
     "updated_at": "2025-03-21"
   },
   {
-    "id": "51d62e11-f754-4b83-9818-eb20f187d6de",
-    "role": "USER",
-    "email": "rinamelianti129@gmail.com",
-    "password": "$2b$10$nzMdi49FI0weNF4YNb2btuUa7/jt6.F/GweO9rnp3TNb7s3J4YQJK",
-    "refresh_token": null,
-    "created_at": "2025-03-21",
-    "updated_at": "2025-03-21"
-  },
-  {
     "id": "34868617-7ed1-4ff9-8547-e4db2ae6520c",
     "role": "USER",
     "email": "bowograbojol@gmail.com",
@@ -2542,15 +2533,6 @@
     "role": "USER",
     "email": "ryusiburian@gmail.com",
     "password": "$2b$10$nqhbM7AtLVqeIVViVtTVjupRcQ/IKQHl8mQ7YOHPYbpyVwQthhqyS",
-    "refresh_token": null,
-    "created_at": "2025-03-21",
-    "updated_at": "2025-03-21"
-  },
-  {
-    "id": "327ace0d-0c3b-4336-90e3-5c02f089f25d",
-    "role": "USER",
-    "email": "iwanhendriana870@gmail.com",
-    "password": "$2b$10$JnFIEp2Xnnpwv4ajtJ1bRuTzvwtTzpv5PCxh9ma3ai8rBuJvjv2SS",
     "refresh_token": null,
     "created_at": "2025-03-21",
     "updated_at": "2025-03-21"
@@ -2790,6 +2772,15 @@
     "updated_at": "2025-04-29"
   },
   {
+    "id": "51d62e11-f754-4b83-9818-eb20f187d6de",
+    "role": "USER",
+    "email": "rinamelianti129@gmail.com",
+    "password": "$2b$10$nzMdi49FI0weNF4YNb2btuUa7/jt6.F/GweO9rnp3TNb7s3J4YQJK",
+    "refresh_token": "$2b$12$JienttMEa2wkqtBccktasu.109ZazR87aIOpAPyPneZ38xUkIvRe.",
+    "created_at": "2025-03-21",
+    "updated_at": "2025-05-26"
+  },
+  {
     "id": "3177ce9f-bf96-4553-8de2-762aff5d47f2",
     "role": "USER",
     "email": "feelingnva@gmail.com",
@@ -2920,6 +2911,15 @@
     "role": "USER",
     "email": "wibinaufal01@gmail.com",
     "password": "$2b$10$0lxigxT7y13OZSi1ZpvkEuQiubXLqItfucpUGKoAhtH4P5xcEFNT6",
+    "refresh_token": null,
+    "created_at": "2025-03-21",
+    "updated_at": "2025-03-21"
+  },
+  {
+    "id": "327ace0d-0c3b-4336-90e3-5c02f089f25d",
+    "role": "USER",
+    "email": "iwanhendriana870@gmail.com",
+    "password": "$2b$10$JnFIEp2Xnnpwv4ajtJ1bRuTzvwtTzpv5PCxh9ma3ai8rBuJvjv2SS",
     "refresh_token": null,
     "created_at": "2025-03-21",
     "updated_at": "2025-03-21"
@@ -3307,15 +3307,6 @@
     "role": "USER",
     "email": "cahyana.putra@gmail.com",
     "password": "$2b$10$t.Vbe6IZ.frGeZlciYDeZ.Q1eVlNUu57a3PjPNaAoUyyy.rEf1vwS",
-    "refresh_token": null,
-    "created_at": "2025-03-21",
-    "updated_at": "2025-03-21"
-  },
-  {
-    "id": "15efb822-0c4b-4e70-b31c-6e481abfb4e5",
-    "role": "USER",
-    "email": "husnifauzi01@gmail.com",
-    "password": "$2b$10$SrKY88.Ux8XyK4QdipvUeOG./.ANz3i7zDcqMIvTmS.6lfr3nEF42",
     "refresh_token": null,
     "created_at": "2025-03-21",
     "updated_at": "2025-03-21"
@@ -4144,9 +4135,9 @@
     "role": "USER",
     "email": "sartikaika125@gmail.com",
     "password": "$2b$10$SHh5NORAW7gQL9xxOgmNIuyS3yxMyPyKOGHQlEf3rZu7j.7kt9hSS",
-    "refresh_token": null,
+    "refresh_token": "$2b$12$bdml1G1lcS1xCAhsqxeywevnHbpznYpDWFXAEXx/oaI7dpWZDjpbC",
     "created_at": "2025-03-21",
-    "updated_at": "2025-05-01"
+    "updated_at": "2025-05-22"
   },
   {
     "id": "47cf4da3-ecea-4299-94b2-4df0f1c3a361",
@@ -4833,6 +4824,15 @@
     "updated_at": "2025-04-23"
   },
   {
+    "id": "246a4970-336d-4a16-be5e-b7c41aa7af19",
+    "role": "USER",
+    "email": "ranihannan.nuniek@gmail.com",
+    "password": "$2b$10$tSA/xHbyN2cmldXfkIocze9RVI9.GRZJ6qc2r3c4e87Ig00NpAeR2",
+    "refresh_token": null,
+    "created_at": "2025-03-21",
+    "updated_at": "2025-05-27"
+  },
+  {
     "id": "2794b0db-b985-4386-9f4d-329cc31887bd",
     "role": "USER",
     "email": "rexywahyu123@gmail.com",
@@ -4882,15 +4882,6 @@
     "role": "USER",
     "email": "jeadeeva@gmail.com",
     "password": "$2b$10$QJ.gX.CVOKKrhlHB6rf2ue8kHKkGjenipRwiBTRn930o18lixbdTC",
-    "refresh_token": null,
-    "created_at": "2025-03-21",
-    "updated_at": "2025-05-01"
-  },
-  {
-    "id": "246a4970-336d-4a16-be5e-b7c41aa7af19",
-    "role": "USER",
-    "email": "ranihannan.nuniek@gmail.com",
-    "password": "$2b$10$tSA/xHbyN2cmldXfkIocze9RVI9.GRZJ6qc2r3c4e87Ig00NpAeR2",
     "refresh_token": null,
     "created_at": "2025-03-21",
     "updated_at": "2025-05-01"
@@ -5463,15 +5454,6 @@
     "updated_at": "2025-03-21"
   },
   {
-    "id": "0fc94c26-7bc2-4e65-bc3a-c946e12099ef",
-    "role": "USER",
-    "email": "Yesika.mh@gmail.com",
-    "password": "$2b$10$mDpBd.4JyUIDB.4WopzC9O/1yQaWYa2xX./1GubZG.fieXa2Md4ve",
-    "refresh_token": null,
-    "created_at": "2025-03-21",
-    "updated_at": "2025-03-21"
-  },
-  {
     "id": "856111b5-124b-4e95-9589-eeec2709d8fb",
     "role": "USER",
     "email": "azoflan14@gmail.com",
@@ -5485,15 +5467,6 @@
     "role": "USER",
     "email": "ranyinderawaty@gmail.com",
     "password": "$2b$10$OR7RUI9Nj4h52dp5lvrtvuWnRZ7lj7w2kTbAQjaqHKSamHi34ixaS",
-    "refresh_token": null,
-    "created_at": "2025-03-21",
-    "updated_at": "2025-03-21"
-  },
-  {
-    "id": "236b65ad-7f0e-4db4-863c-78529fee6989",
-    "role": "USER",
-    "email": "yessa.nadia@yahoo.co.id",
-    "password": "$2b$10$5WNTcfq2OxfOHaBs6AUt1OC02/JlkHXoOxRDJz1nylSPAI0UhsDCi",
     "refresh_token": null,
     "created_at": "2025-03-21",
     "updated_at": "2025-03-21"
@@ -5548,15 +5521,6 @@
     "role": "USER",
     "email": "oktaq@yahoo.co.id",
     "password": "$2b$10$vhwqnbxTE49bXAuu2NTOUu9l/xkWEFR/DOLSbaYHZVqaoVnjs22gy",
-    "refresh_token": null,
-    "created_at": "2025-03-21",
-    "updated_at": "2025-03-21"
-  },
-  {
-    "id": "c095db94-4ca6-4341-a91c-e1410fcf9efe",
-    "role": "USER",
-    "email": "tieaja1414@gmail.com",
-    "password": "$2b$10$ashEbApJCRCu.rzeobnwc.8QVtSLCKt1F42nvqMXRFQj620TtAyH2",
     "refresh_token": null,
     "created_at": "2025-03-21",
     "updated_at": "2025-03-21"
@@ -5625,6 +5589,15 @@
     "updated_at": "2025-04-28"
   },
   {
+    "id": "c095db94-4ca6-4341-a91c-e1410fcf9efe",
+    "role": "USER",
+    "email": "tieaja1414@gmail.com",
+    "password": "$2b$10$ashEbApJCRCu.rzeobnwc.8QVtSLCKt1F42nvqMXRFQj620TtAyH2",
+    "refresh_token": null,
+    "created_at": "2025-03-21",
+    "updated_at": "2025-05-23"
+  },
+  {
     "id": "1f5110ea-3c33-4ed5-a5ef-508542217cf4",
     "role": "USER",
     "email": "yudhi.amrial@gmail.com",
@@ -5650,6 +5623,24 @@
     "refresh_token": "$2b$12$9xMXOhNOYiGB8alV.VDDy.Nhik/qFxyt6NE8oU2cUVKOptLiU6BH2",
     "created_at": "2025-03-21",
     "updated_at": "2025-05-20"
+  },
+  {
+    "id": "0fc94c26-7bc2-4e65-bc3a-c946e12099ef",
+    "role": "USER",
+    "email": "Yesika.mh@gmail.com",
+    "password": "$2b$10$mDpBd.4JyUIDB.4WopzC9O/1yQaWYa2xX./1GubZG.fieXa2Md4ve",
+    "refresh_token": "$2b$12$vqIyC4NLiYxe7DFoQ8j8bOdAZKZkb/Zh/odnqwQtjdN0ae.rERqb2",
+    "created_at": "2025-03-21",
+    "updated_at": "2025-05-27"
+  },
+  {
+    "id": "236b65ad-7f0e-4db4-863c-78529fee6989",
+    "role": "USER",
+    "email": "yessa.nadia@yahoo.co.id",
+    "password": "$2b$10$5WNTcfq2OxfOHaBs6AUt1OC02/JlkHXoOxRDJz1nylSPAI0UhsDCi",
+    "refresh_token": "$2b$12$ZRCNTQAed.XvUu04Ge5riOIHaU2y0t48AcUbPzCLgUF0zus6Gdovy",
+    "created_at": "2025-03-21",
+    "updated_at": "2025-05-27"
   },
   {
     "id": "62365105-9bc8-40e2-8480-b3967f862736",
@@ -5998,9 +5989,9 @@
     "role": "ADMIN",
     "email": "soekarnorun.official@gmail.com",
     "password": "$2b$10$gXvH9RcZzm.cHuSHs7zaVebMk81uZ5tNBSU4y8rpBj02oDPeSlJ0S",
-    "refresh_token": null,
+    "refresh_token": "$2b$12$yzLjSH9T0cvnmdAKMUvpxOAFxpA92KHlEWa9hwj81UCazXYmAcBmi",
     "created_at": "2025-03-17",
-    "updated_at": "2025-04-28"
+    "updated_at": "2025-05-26"
   },
   {
     "id": "c38258ed-0060-47b4-8dce-10aeb83e2a12",
@@ -6651,6 +6642,15 @@
     "updated_at": "2025-04-15"
   },
   {
+    "id": "5645ec59-6515-4912-969e-e11f824ce633",
+    "role": "USER",
+    "email": "muftisadullah@gmail.com",
+    "password": "$2b$10$3hFMxl1zBialBeKM571quOaszH9h5.fxTWFlJG8nO3oHIph2f6KOK",
+    "refresh_token": null,
+    "created_at": "2025-04-23",
+    "updated_at": "2025-05-27"
+  },
+  {
     "id": "633744d3-62b8-46c7-88b0-34c412d1eb7b",
     "role": "USER",
     "email": "hasbiahmadinejad@gmail.com",
@@ -6849,15 +6849,6 @@
     "updated_at": "2025-04-23"
   },
   {
-    "id": "5645ec59-6515-4912-969e-e11f824ce633",
-    "role": "USER",
-    "email": "muftisadullah@gmail.com",
-    "password": "$2b$10$3hFMxl1zBialBeKM571quOaszH9h5.fxTWFlJG8nO3oHIph2f6KOK",
-    "refresh_token": null,
-    "created_at": "2025-04-23",
-    "updated_at": "2025-05-14"
-  },
-  {
     "id": "7c1a4242-3bb9-4c34-9b9e-baaff0d12e18",
     "role": "USER",
     "email": "hakimrafif1@gmail.com",
@@ -6982,15 +6973,6 @@
     "refresh_token": "$2b$12$eUEFCPUi.byBL5ABtqhGweS0hMSTsE4R7XauS44rLdxQ06JuBtFHO",
     "created_at": "2025-04-24",
     "updated_at": "2025-04-29"
-  },
-  {
-    "id": "274fc5bc-29ab-412c-9625-a6e5fc35e8a5",
-    "role": "USER",
-    "email": "vivivania73@gmail.com",
-    "password": "$2b$10$6TwCGOe669xdexviPe5l.OKT/EbppwQRaIQmx0p/BOfoVXVq52vSe",
-    "refresh_token": null,
-    "created_at": "2025-04-26",
-    "updated_at": "2025-05-16"
   },
   {
     "id": "b335de01-6c1d-410c-954a-a24ef9fc3182",
@@ -7234,6 +7216,15 @@
     "refresh_token": null,
     "created_at": "2025-04-28",
     "updated_at": "2025-04-28"
+  },
+  {
+    "id": "274fc5bc-29ab-412c-9625-a6e5fc35e8a5",
+    "role": "USER",
+    "email": "vivivania73@gmail.com",
+    "password": "$2b$10$6TwCGOe669xdexviPe5l.OKT/EbppwQRaIQmx0p/BOfoVXVq52vSe",
+    "refresh_token": null,
+    "created_at": "2025-04-26",
+    "updated_at": "2025-05-22"
   },
   {
     "id": "05e15c24-cb92-4d72-9341-18ecb702ecb5",
@@ -8149,9 +8140,9 @@
     "role": "USER",
     "email": "agungpras.xyz@gmail.com",
     "password": "$2b$10$ub5dLT9yKwmxY/z8Sg4LCekXDaUuOCL2Rv.4.GYCegEQk0C5grsK2",
-    "refresh_token": "$2b$12$gFt9SGvz7m/oyf/BVLDoUOt4DDKdPCTVfki4e/0wMhBeZIDqsSfPS",
+    "refresh_token": "$2b$12$86kB4LGEV1Q.pLVZNsf9n.5iOLwitpFkqKW2hzJ0KFvZSZkhNwrBG",
     "created_at": "2025-05-13",
-    "updated_at": "2025-05-13"
+    "updated_at": "2025-05-24"
   },
   {
     "id": "224804a6-43b0-4675-ae73-5e1a02d332d3",
@@ -8653,9 +8644,9 @@
     "role": "USER",
     "email": "demmy.arfani75@gmail.com",
     "password": "$2b$10$Cs6HJZ3cd1ORXmZiRg1HIuq6CQZ7RBHDR/Wa6mXE0S9druXxaXlv.",
-    "refresh_token": "$2b$12$nK5bcoC2JhJKljn/p9tdYOJcI1GKkuRq24iERNVwjXDPEbDcOLg6q",
+    "refresh_token": "$2b$12$NylQikKfra8gx5CwH8xPKO3UDO51.v24JOTQovFf1Z6ccPb/C3ZkS",
     "created_at": "2025-05-17",
-    "updated_at": "2025-05-17"
+    "updated_at": "2025-05-27"
   },
   {
     "id": "523c2e11-aec7-4e02-903d-b778e698229a",
@@ -8665,15 +8656,6 @@
     "refresh_token": "$2b$12$bTW7QXtSdO5IoylT0vFe1Os.aaskSJAnKEQ7z3R9gDcnz1VksM2RK",
     "created_at": "2025-05-18",
     "updated_at": "2025-05-20"
-  },
-  {
-    "id": "343d2dfe-76ba-4be4-b275-ddbf35494cd8",
-    "role": "USER",
-    "email": "haris02rapsanjani@gmail.com",
-    "password": "$2b$10$c0BfFO4Gu4oMEs2DCZViGOGWFGhaZiqv0ecri.bw.ABez8RdjtqUq",
-    "refresh_token": "$2b$12$IBIEFG5QCQtIrxrssXwJA.Db5MpGC5Dl6eko3oTfHFlz3UbVTqQjy",
-    "created_at": "2025-05-18",
-    "updated_at": "2025-05-18"
   },
   {
     "id": "83b008ca-62ca-4e57-8abd-bdc16059a850",
@@ -8779,9 +8761,9 @@
     "role": "USER",
     "email": "widhiiswari@gmail.com",
     "password": "$2b$10$dyLrXAtbmkKpeK6e3uDJk.5TM0I1EzL94Rqs6RVkGBKpvmpt7vwAO",
-    "refresh_token": "$2b$12$FRPr/0d/DJQbsj0ygRDYluLCrfJjGh6Fj1JUEpb2PWCd8Utn9Sup.",
+    "refresh_token": "$2b$12$kP9fQk.57cB.q/Uy7K.tK.D5ZqGexY7GuDkfzNw0IN80jJv7l6iMi",
     "created_at": "2025-05-18",
-    "updated_at": "2025-05-18"
+    "updated_at": "2025-05-26"
   },
   {
     "id": "f463276c-5a6f-4172-9a13-a568af97f939",
@@ -8872,6 +8854,15 @@
     "refresh_token": "$2b$12$.YTV9PEWjQu7o9xHRvK1eeGBgOBt4mkkt5Zgv545mzTocZe/R/l/i",
     "created_at": "2025-05-19",
     "updated_at": "2025-05-19"
+  },
+  {
+    "id": "343d2dfe-76ba-4be4-b275-ddbf35494cd8",
+    "role": "USER",
+    "email": "haris02rapsanjani@gmail.com",
+    "password": "$2b$10$c0BfFO4Gu4oMEs2DCZViGOGWFGhaZiqv0ecri.bw.ABez8RdjtqUq",
+    "refresh_token": null,
+    "created_at": "2025-05-18",
+    "updated_at": "2025-05-26"
   },
   {
     "id": "89d21701-0b18-4092-9751-5ebd40ced5db",
@@ -8989,6 +8980,15 @@
     "refresh_token": "$2b$12$M4ZtLl4c0YcrPaizUaysi.EarVeYLAsnXPW7P/F0x1UqkBII1f5KC",
     "created_at": "2025-05-19",
     "updated_at": "2025-05-19"
+  },
+  {
+    "id": "2f590f55-830c-48df-a973-f804906c2458",
+    "role": "USER",
+    "email": "feronicaver@gmail.com",
+    "password": "$2b$10$uUq3IGxeroQP92rckLbCzeaL3QdjuiVb2Mm.xv7EHYjmnsb6KdWtu",
+    "refresh_token": null,
+    "created_at": "2025-05-19",
+    "updated_at": "2025-05-26"
   },
   {
     "id": "0896397d-6424-4c1a-87b1-f98ff5eedb3b",
@@ -9178,15 +9178,6 @@
     "refresh_token": null,
     "created_at": "2025-05-19",
     "updated_at": "2025-05-19"
-  },
-  {
-    "id": "2f590f55-830c-48df-a973-f804906c2458",
-    "role": "USER",
-    "email": "feronicaver@gmail.com",
-    "password": "$2b$10$uUq3IGxeroQP92rckLbCzeaL3QdjuiVb2Mm.xv7EHYjmnsb6KdWtu",
-    "refresh_token": "$2b$12$iDONMuE8d6mGb7e7zHx2p.MSIWBA9dmQpEAq3l/D3KOV0foQvMURC",
-    "created_at": "2025-05-19",
-    "updated_at": "2025-05-21"
   },
   {
     "id": "e422c205-1f09-40c8-8553-3e2b9e1ac65a",
@@ -9771,7 +9762,7 @@
     "password": "$2b$10$JoW.ZiVrNsmyBqOUfByMSOlHzcsW1lsb9972GFxfAHvtLnCMUGy7W",
     "refresh_token": null,
     "created_at": "2025-05-21",
-    "updated_at": "2025-05-21"
+    "updated_at": "2025-05-23"
   },
   {
     "id": "37cad062-9d45-4874-89a2-9f289412c484",
@@ -9844,5 +9835,104 @@
     "refresh_token": "$2b$12$i9XxeLds17GCznV0EVm6C.0pVXCjm1WjGZQgy3QAC9E62HMG11trW",
     "created_at": "2025-05-22",
     "updated_at": "2025-05-22"
+  },
+  {
+    "id": "87f838a5-236b-42c0-ad9e-19fbfbe05958",
+    "role": "USER",
+    "email": "triewicahyo23@gmail.com",
+    "password": "$2b$10$oKP96Tt2ZZaY.w90zDEIeOCC2CfYSIjx3drh4BDX0FMDHlBrY2F6G",
+    "refresh_token": null,
+    "created_at": "2025-05-22",
+    "updated_at": "2025-05-22"
+  },
+  {
+    "id": "935951e1-c9fc-4e40-8323-beb0c812cad1",
+    "role": "USER",
+    "email": "heymule12@gmail.com",
+    "password": "$2b$10$ySaF5jJvgMCsYaOHsyBvxOGo7XXHHJxFaiB8EC3ALVfC0x.sTMLTW",
+    "refresh_token": null,
+    "created_at": "2025-05-22",
+    "updated_at": "2025-05-22"
+  },
+  {
+    "id": "15efb822-0c4b-4e70-b31c-6e481abfb4e5",
+    "role": "USER",
+    "email": "husnifauzi01@gmail.com",
+    "password": "$2b$10$SrKY88.Ux8XyK4QdipvUeOG./.ANz3i7zDcqMIvTmS.6lfr3nEF42",
+    "refresh_token": "$2b$12$XGy7D/qfg81u0zb20nZ.m.qySSkAtnpk1PLzd.wszYHeC9rUAE81m",
+    "created_at": "2025-03-21",
+    "updated_at": "2025-05-22"
+  },
+  {
+    "id": "a2db85c1-98c7-4b7a-af47-d11d3758b155",
+    "role": "USER",
+    "email": "nadyasnathania@gmail.com",
+    "password": "$2b$10$HxYk8bKrINsWtJNg/FA4oOSLuCcrJlTVdR54.Evq2u9oQDuGq4XE2",
+    "refresh_token": "$2b$12$Xa71b2kQmWuoMCx0Z2GsHuRZSTmRuH/wk7ysgRblnBlkLnO8Wa8Xq",
+    "created_at": "2025-05-23",
+    "updated_at": "2025-05-23"
+  },
+  {
+    "id": "35d19408-955c-41d4-af88-a16074b73d80",
+    "role": "USER",
+    "email": "rakaakbarramadhan4@gmail.com",
+    "password": "$2b$10$hXEQd/E5u9kAVkPryDAjbujKDzr/MBNcj2hHl5UkvKgc32o72T81i",
+    "refresh_token": "$2b$12$1wveUJcyNjAB9iSLikmCUeSLMk8onezbeF0KiwZcQ/qsNJaK9o7kW",
+    "created_at": "2025-05-23",
+    "updated_at": "2025-05-23"
+  },
+  {
+    "id": "f371623e-ecd0-44ac-869b-6adbc99be285",
+    "role": "USER",
+    "email": "rezamuh313@gmail.com",
+    "password": "$2b$10$texhHtVJvhRschFblgOXROxP50iigdoWLYcnlNJeT4r.x0LAAAqoC",
+    "refresh_token": "$2b$12$ba/cNhyAsiSlD9hZDnJ30OA5AOxTcYlBfPMZOWhXOFZDV4iL0z8/u",
+    "created_at": "2025-05-24",
+    "updated_at": "2025-05-24"
+  },
+  {
+    "id": "2704709d-f27b-4c64-82d7-96a81c7f8f83",
+    "role": "USER",
+    "email": "r.suhandy29@gmail.com",
+    "password": "$2b$10$dJMXy0sBt2nnG6CGkVpfuO18cltsP4s.pqupXrtRCDuAU1TQ5UCEe",
+    "refresh_token": null,
+    "created_at": "2025-05-24",
+    "updated_at": "2025-05-24"
+  },
+  {
+    "id": "eb8895e8-0635-4b56-b579-0df576850f0f",
+    "role": "USER",
+    "email": "algav.malvino2769@gmail.com",
+    "password": "$2b$10$J75K.09JKPmRKXBqzpKble1JJ/rlTZ4o918oq8H.Eyi9JWzqX32Ua",
+    "refresh_token": "$2b$12$m3OhBY0kauOySIIm47fljOsHXqkN50WTgDu4XJnnmodQdQSaELhHu",
+    "created_at": "2025-05-24",
+    "updated_at": "2025-05-24"
+  },
+  {
+    "id": "5149c9f0-02d3-4238-95b5-6f1e43ab54ac",
+    "role": "USER",
+    "email": "Bintangplvv@gmail.com",
+    "password": "$2b$10$i3YgtvIdNGNrRSxeq7/mfeagW/RU2js87LQm/PUdO8vPav4n4yiL6",
+    "refresh_token": "$2b$12$zDbATLtSyyvFiW35RTCYoOVvNAgusXhQuOfiPFsK9si0UmbAmSY2e",
+    "created_at": "2025-05-25",
+    "updated_at": "2025-05-25"
+  },
+  {
+    "id": "f015b4e6-4d74-4f35-ab32-b801bb79bf52",
+    "role": "USER",
+    "email": "rikisetiawan171201@gmail.com",
+    "password": "$2b$10$oIi6sd68vb.WCq11MWAadeJszhtHB.XrhZa4kXZqInieKI5qD9KF.",
+    "refresh_token": "$2b$12$NKTTclmxmSC17D8dHRhlTeixGdTR5PfHZ0eCRO4TaYJZbsfFrNbhu",
+    "created_at": "2025-05-25",
+    "updated_at": "2025-05-25"
+  },
+  {
+    "id": "0ee15755-b366-4446-96f3-63c3a8b75916",
+    "role": "USER",
+    "email": "anggorojnj@gmail.com",
+    "password": "$2b$10$qBCLs4JnXRWp0eRCUoHv8uRKPW41Xitq6mXRgwOJLcs2HWtnnjn.C",
+    "refresh_token": "$2b$12$lM/A5CeRPCG7fpyYV/08bO2S8LMBfyB5Aiqo.OOg2uvRk4jGDcuBG",
+    "created_at": "2025-05-26",
+    "updated_at": "2025-05-26"
   }
 ]

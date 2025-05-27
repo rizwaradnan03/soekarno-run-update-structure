@@ -2,11 +2,11 @@
   {
     "id": "63ec03c2-5a6b-48d1-8d6e-9d342ccc2a05",
     "checksum": "42ca4be2d0aef0c11d6aa57c799649d3b2cc1bf65370d8b60acc9f5e3fc5d50c",
-    "finished_at": "2025-03-17 18:52:32.419446+07",
+    "finished_at": "2025-03-17 11:52:32.419446+00",
     "migration_name": "20250317115232_",
     "logs": null,
     "rolled_back_at": null,
-    "started_at": "2025-03-17 18:52:32.327492+07",
+    "started_at": "2025-03-17 11:52:32.327492+00",
     "applied_steps_count": 1
   }
 ]

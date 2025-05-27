@@ -12,7 +12,7 @@ import dataPersonalInformations from "./data/personal_infomations.json" assert {
 const client = new Client({
   user: "postgres",
   host: "localhost",
-  database: "soekarno_before_migrating__",
+  database: "soekarnorun_sample",
   password: "",
   port: 5432,
 });
@@ -42,7 +42,7 @@ let personalInformationsQuery = [];
 
 let personalInformationIds = [];
 
-for(let i = 0;i < dataEvents.length;i++){
+for (let i = 0; i < dataEvents.length; i++) {
   const event = dataEvents[i]
 
   eventQuery.push([
@@ -51,7 +51,7 @@ for(let i = 0;i < dataEvents.length;i++){
   ])
 }
 
-for(let i = 0;i < dataProductCategories.length;i++){
+for (let i = 0; i < dataProductCategories.length; i++) {
   const productCategory = dataProductCategories[i]
 
   productCategoriesQuery.push([
@@ -114,7 +114,7 @@ for (let i = 0; i < dataPersonalInformations.length; i++) {
       contact, gender, nationality, ktp, health_problem, community, name_of_emergency_contact, 
       relation_of_emergency_contact, emergency_contact, shirt_type, shirt_size, 
       blood_type, created_at, updated_at) 
-      VALUES ('${personalInformation.id}', '${personalInformation.user_id}', ${personalInformation.first_name ? `'${personalInformation.first_name}'` : null }, '${personalInformation.last_name}', '${personalInformation.contact}', '${personalInformation.gender}', '${personalInformation.nationality}', '${personalInformation.ktp}', '${personalInformation.health_problem}', ${personalInformation.community ? `'${personalInformation.community}'` : null}, '${personalInformation.name_of_emergency_contact}', '${personalInformation.relation_of_emergency_contact}', '${personalInformation.emergencyContact}', '${personalInformation.shirt_type}', '${personalInformation.shirt_size}', '${personalInformation.blood_type}', '${personalInformation.created_at}', '${personalInformation.updated_at}');`,
+      VALUES ('${personalInformation.id}', '${personalInformation.user_id}', ${personalInformation.first_name ? `'${personalInformation.first_name}'` : null}, '${personalInformation.last_name}', '${personalInformation.contact}', '${personalInformation.gender}', '${personalInformation.nationality}', '${personalInformation.ktp}', '${personalInformation.health_problem}', ${personalInformation.community ? `'${personalInformation.community}'` : null}, '${personalInformation.name_of_emergency_contact}', '${personalInformation.relation_of_emergency_contact}', '${personalInformation.emergencyContact}', '${personalInformation.shirt_type}', '${personalInformation.shirt_size}', '${personalInformation.blood_type}', '${personalInformation.created_at}', '${personalInformation.updated_at}');`,
     ]);
     personalInformationIds.push(personalInformation.id);
   }
@@ -131,20 +131,14 @@ for (let i = 0; i < dataUserPayments.length; i++) {
     isValid = true;
     userPaymentQuery.push([
       i,
-      `INSERT INTO user_payments (id, order_id, variant_id, user_id, transaction_status, is_payed, is_qr_booked, gross_amount, payment_type, created_at, updated_at, bib_number) VALUES('${
-        userPayment.id
-      }', ${userPayment.transaction_id ? `'${userPayment.transaction_id}'` : null}, '${
-        userPayment.product_id
-      }', '${userPayment.user_id}', '${"settlement"}',${
-        userPayment.is_payed
-      }, ${userPayment.is_qr_booked}, ${
-        userPayment.gross_amount ? userPayment.gross_amount : null
-      }, ${
-        userPayment.payment_type ? `'${userPayment.payment_type}'` : null
-      }, '2025-03-21', '2025-03-21', ${
-        userPayment.bib_number
-          ? `'${String(userPayment.bib_number).padStart(4, "0")}'`
-          : null
+      `INSERT INTO user_payments (id, order_id, variant_id, user_id, transaction_status, is_payed, is_qr_booked, gross_amount, payment_type, created_at, updated_at, bib_number) VALUES('${userPayment.id
+      }', ${userPayment.transaction_id ? `'${userPayment.transaction_id}'` : null}, '${userPayment.product_id
+      }', '${userPayment.user_id}', '${"settlement"}',${userPayment.is_payed
+      }, ${userPayment.is_qr_booked}, ${userPayment.gross_amount ? userPayment.gross_amount : null
+      }, ${userPayment.payment_type ? `'${userPayment.payment_type}'` : null
+      }, '2025-03-21', '2025-03-21', ${userPayment.bib_number
+        ? `'${String(userPayment.bib_number).padStart(4, "0")}'`
+        : null
       });`,
     ]);
   } else {
@@ -200,7 +194,7 @@ const queries = async () => {
   for (let i = 0; i < eventQuery.length; i++) {
     try {
       await client.query(eventQuery[i][1]);
-      console.log("Event Log : ", i);
+      // console.log("Event Log : ", i);
       eventLogs.push([i, "success"]);
     } catch (error) {
       eventLogs.push([i, "failed"]);
@@ -211,7 +205,7 @@ const queries = async () => {
   for (let i = 0; i < productCategoriesQuery.length; i++) {
     try {
       await client.query(productCategoriesQuery[i][1]);
-      console.log("Product Category Log : ", i);
+      // console.log("Product Category Log : ", i);
       productCategoryLogs.push([i, "success"]);
     } catch (error) {
       productCategoryLogs.push([i, "failed"]);
@@ -222,7 +216,7 @@ const queries = async () => {
   for (let i = 0; i < productsQuery.length; i++) {
     try {
       await client.query(productsQuery[i][1]);
-      console.log("Product Log : ", i);
+      // console.log("Product Log : ", i);
       productLogs.push([i, "success"]);
     } catch (error) {
       productLogs.push([i, "failed"]);
@@ -233,7 +227,7 @@ const queries = async () => {
   for (let i = 0; i < variantsQuery.length; i++) {
     try {
       await client.query(variantsQuery[i][1]);
-      console.log("Variant Log : ", i);
+      // console.log("Variant Log : ", i);
       variantLogs.push([i, "success"]);
     } catch (error) {
       variantLogs.push([i, "failed"]);
@@ -244,7 +238,7 @@ const queries = async () => {
   for (let i = 0; i < usersQuery.length; i++) {
     try {
       await client.query(usersQuery[i][1]);
-      console.log("User Log : ", i);
+      // console.log("User Log : ", i);
       userLogs.push([i, "success"]);
     } catch (error) {
       userLogs.push([i, "failed"]);
@@ -255,7 +249,7 @@ const queries = async () => {
   for (let i = 0; i < parqQuestionsQuery.length; i++) {
     try {
       await client.query(parqQuestionsQuery[i][1]);
-      console.log("Parq Question Log : ", i);
+      // console.log("Parq Question Log : ", i);
       parqQuestionLogs.push([i, "success"]);
     } catch (error) {
       parqQuestionLogs.push([i, "failed"]);
@@ -265,27 +259,37 @@ const queries = async () => {
   let personalInformationLogs = [];
   for (let i = 0; i < personalInformationsQuery.length; i++) {
     try {
-      await client.query(personalInformationsQuery[i][1]);
+      const res = await client.query(personalInformationsQuery[i][1]);
       console.log("Personal Information Log : ", i);
-      personalInformationLogs.push([i, "success"]);
+
+      if (res.rowCount == 0) {
+        personalInformationLogs.push([i, "failed"]);
+      } else {
+        personalInformationLogs.push([i, "success"]);
+      }
+
     } catch (error) {
+      console.log("Error at personalInformationsQuery index:", i, "\nQuery:\n", personalInformationsQuery[i][1], "\nError:\n", error.message);
       personalInformationLogs.push([i, "failed"]);
     }
+
   }
 
   let userPaymentLogs = [];
   for (let i = 0; i < userPaymentQuery.length; i++) {
     try {
       await client.query(userPaymentQuery[i][1]);
-      console.log("User Payment Log : ", i);
+      // console.log("User Payment Log : ", i);
       userPaymentLogs.push([i, "success"]);
     } catch (error) {
       userPaymentLogs.push([i, "failed"]);
     }
   }
 
-  console.log("Variant : ", variantsQuery[0])
-  console.log("User Payment : ", userPaymentQuery[0])
+  // console.log("Variant : ", variantsQuery[0])
+  // console.log("User Payment : ", userPaymentQuery[0])
+  console.log(personalInformationLogs.length)
 };
 
 queries()
+
