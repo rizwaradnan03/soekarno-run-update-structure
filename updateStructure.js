@@ -193,10 +193,15 @@ const queries = async () => {
   let eventLogs = [];
   for (let i = 0; i < eventQuery.length; i++) {
     try {
-      await client.query(eventQuery[i][1]);
-      // console.log("Event Log : ", i);
-      eventLogs.push([i, "success"]);
+      const res = await client.query(eventQuery[i][1]);
+      if (res.rowCount == 0) {
+        eventLogs.push([i, "failed"]);
+      } else {
+        eventLogs.push([i, "success"]);
+      }
+
     } catch (error) {
+      console.log("Error at Event index:", i, "\nQuery:\n", eventQuery[i][1], "\nError:\n", error.message);
       eventLogs.push([i, "failed"]);
     }
   }
@@ -204,10 +209,15 @@ const queries = async () => {
   let productCategoryLogs = [];
   for (let i = 0; i < productCategoriesQuery.length; i++) {
     try {
-      await client.query(productCategoriesQuery[i][1]);
-      // console.log("Product Category Log : ", i);
-      productCategoryLogs.push([i, "success"]);
+      const res = await client.query(productCategoriesQuery[i][1]);
+      if (res.rowCount == 0) {
+        productCategoryLogs.push([i, "failed"]);
+      } else {
+        productCategoryLogs.push([i, "success"]);
+      }
+
     } catch (error) {
+      console.log("Error at personalInformationsQuery index:", i, "\nQuery:\n", productCategoryLogs[i][1], "\nError:\n", error.message);
       productCategoryLogs.push([i, "failed"]);
     }
   }
@@ -215,10 +225,16 @@ const queries = async () => {
   let productLogs = [];
   for (let i = 0; i < productsQuery.length; i++) {
     try {
-      await client.query(productsQuery[i][1]);
-      // console.log("Product Log : ", i);
-      productLogs.push([i, "success"]);
+      const res = await client.query(productsQuery[i][1]);
+
+     if (res.rowCount == 0) {
+        productLogs.push([i, "failed"]);
+      } else {
+        productLogs.push([i, "success"]);
+      }
+
     } catch (error) {
+      console.log("Error at Product Query index:", i, "\nQuery:\n", productsQuery[i][1], "\nError:\n", error.message);
       productLogs.push([i, "failed"]);
     }
   }
@@ -226,10 +242,15 @@ const queries = async () => {
   let variantLogs = [];
   for (let i = 0; i < variantsQuery.length; i++) {
     try {
-      await client.query(variantsQuery[i][1]);
-      // console.log("Variant Log : ", i);
-      variantLogs.push([i, "success"]);
+      const res = await client.query(variantsQuery[i][1]);
+      if (res.rowCount == 0) {
+        variantLogs.push([i, "failed"]);
+      } else {
+        variantLogs.push([i, "success"]);
+      }
+
     } catch (error) {
+      console.log("Error at Variant index:", i, "\nQuery:\n", variantsQuery[i][1], "\nError:\n", error.message);
       variantLogs.push([i, "failed"]);
     }
   }
@@ -237,10 +258,15 @@ const queries = async () => {
   let userLogs = [];
   for (let i = 0; i < usersQuery.length; i++) {
     try {
-      await client.query(usersQuery[i][1]);
-      // console.log("User Log : ", i);
-      userLogs.push([i, "success"]);
+      const res = await client.query(usersQuery[i][1]);
+      if (res.rowCount == 0) {
+        userLogs.push([i, "failed"]);
+      } else {
+        userLogs.push([i, "success"]);
+      }
+
     } catch (error) {
+      console.log("Error at Users Query index:", i, "\nQuery:\n", usersQuery[i][1], "\nError:\n", error.message);
       userLogs.push([i, "failed"]);
     }
   }
@@ -248,10 +274,15 @@ const queries = async () => {
   let parqQuestionLogs = [];
   for (let i = 0; i < parqQuestionsQuery.length; i++) {
     try {
-      await client.query(parqQuestionsQuery[i][1]);
-      // console.log("Parq Question Log : ", i);
-      parqQuestionLogs.push([i, "success"]);
+      const res = await client.query(parqQuestionsQuery[i][1]);
+      if (res.rowCount == 0) {
+        parqQuestionLogs.push([i, "failed"]);
+      } else {
+        parqQuestionLogs.push([i, "success"]);
+      }
+
     } catch (error) {
+      console.log("Error at parqquestion index:", i, "\nQuery:\n", parqQuestionsQuery[i][1], "\nError:\n", error.message);
       parqQuestionLogs.push([i, "failed"]);
     }
   }
@@ -278,18 +309,88 @@ const queries = async () => {
   let userPaymentLogs = [];
   for (let i = 0; i < userPaymentQuery.length; i++) {
     try {
-      await client.query(userPaymentQuery[i][1]);
-      // console.log("User Payment Log : ", i);
-      userPaymentLogs.push([i, "success"]);
+      const res = await client.query(userPaymentQuery[i][1]);
+      if (res.rowCount == 0) {
+        userPaymentLogs.push([i, "failed"]);
+      } else {
+        userPaymentLogs.push([i, "success"]);
+      }
+
     } catch (error) {
+      console.log("Error at userpaymentsQuery index:", i, "\nQuery:\n", userPaymentQuery[i][1], "\nError:\n", error.message);
       userPaymentLogs.push([i, "failed"]);
     }
   }
 
-  // console.log("Variant : ", variantsQuery[0])
-  // console.log("User Payment : ", userPaymentQuery[0])
-  console.log(personalInformationLogs.length)
+  let eventSuccess = 0
+  for(let i = 0;i < eventLogs.length;i++){
+    if(eventLogs[i][1] == "success"){
+      eventSuccess++
+    }
+  }
+
+  let productCategorySuccess = 0
+  for(let i = 0;i < productCategoryLogs.length;i++){
+    if(productCategoryLogs[i][1] == "success"){
+      productCategorySuccess++
+    }
+  }
+
+  let parqQuestionSuccess = 0
+  for(let i = 0;i < parqQuestionLogs.length;i++){
+    if(parqQuestionLogs[i][1] == "success"){
+      parqQuestionSuccess++
+    }
+  }
+
+  let personalInformationSuccess = 0
+  for(let i = 0;i < personalInformationLogs.length;i++){
+    if(personalInformationLogs[i][1] == "success"){
+      personalInformationSuccess++
+    }
+  }
+
+  let userPaymentSuccess = 0
+  let userPaymentFailed = []
+  for(let i = 0;i < userPaymentLogs.length;i++){
+    if(userPaymentLogs[i][1] == "success"){
+      userPaymentSuccess++
+    }else{
+      userPaymentFailed.push(userPaymentLogs[i])
+    }
+  }
+
+  let variantSuccess = 0
+  for(let i = 0;i < variantLogs.length;i++){
+    if(variantLogs[i][1] == "success"){
+      variantSuccess++
+    }
+  }
+
+  let userSuccess = 0
+  for(let i = 0;i < userLogs.length;i++){
+    if(userLogs[i][1] == "success"){
+      userSuccess++
+    }
+  }
+
+  let productSuccess = 0
+  for(let i = 0;i < productLogs.length;i++){
+    if(productLogs[i][1] == "success"){
+      productSuccess++
+    }
+  }
+
+  console.log("Event Success : ", eventSuccess, " From (", dataEvents.length, ")")
+  console.log("ParqQuestion Success : ", parqQuestionSuccess, " From (", dataParQuestions.length, ")")
+  console.log("Personal Information Success : ", personalInformationSuccess, " From (", dataPersonalInformations.length, ")")
+  console.log("Product Categories Success : ", productCategorySuccess, " From (", dataProductCategories.length, ")")
+  console.log("Product Success : ", productSuccess, " From (", dataProducts.length, ")")
+  console.log("User Payment Success : ", userPaymentSuccess, " From (", dataUserPayments.length, ")")
+  console.log("User Success : ", userSuccess, " From (", dataUsers.length, ")")
+
+  console.log("User Payment Failed Logs : ", userPaymentFailed[0])
+
 };
 
 queries()
-
